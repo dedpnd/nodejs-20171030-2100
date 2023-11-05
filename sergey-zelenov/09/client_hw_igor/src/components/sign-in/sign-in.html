@@ -1,0 +1,47 @@
+<v-card>
+  <v-form v-model="valid" ref="signInForm" lazy-validation>
+    <v-card-title>
+      <span class="title">Sign In</span>
+    </v-card-title>
+    <v-card-text>
+      <v-text-field
+        v-model="email"
+        name="email"
+        label="E-mail"
+        :rules="emailRules"
+        prepend-icon="email"
+        required
+      ></v-text-field>
+      <v-text-field
+        v-model="password"
+        name="password"
+        label="Password"
+        prepend-icon="lock"
+        type="password"
+        required
+      ></v-text-field>
+    </v-card-text>
+    <v-card-actions>
+      <v-container>
+        <v-btn
+          block
+          @click="signIn"
+          color="primary"
+          :disabled="!valid"
+        > Sign In </v-btn>
+        <v-btn
+          dark
+          block
+          class="sign-in__facebook"
+          @click="signInSocial('facebook')"
+        > Sign In via Facebook</v-btn>
+        <v-btn
+          dark
+          block
+          class="sign-in__github"
+          @click="signInSocial('github')"     
+        >Sign In via Github</v-btn>
+      </v-container>
+    </v-card-actions>
+  </v-form>
+</v-card>

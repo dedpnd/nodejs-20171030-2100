@@ -1,0 +1,32 @@
+extends layout
+block content
+
+  form(action="javascript:void(null);" onsubmit="login(this)" method="post")
+    h1 Please sign in
+
+    .form-group
+      label(for="email") Email
+      input.form-control(type="email" id="email" name="email" placeholder="my@mail.com" required autofocus)
+    .form-group
+      label(for="password") Password
+      input.form-control(type="password" id="password" name="password" required)
+
+    button.btn.btn-lg.btn-primary.btn-block(type="submit") Login
+  
+  form(action="javascript:void(null);" onsubmit="registration(this)" method="post")
+    h1 Please register
+
+    .form-group
+      label(for="displayName") Name
+      input.form-control(type="name" id="displayName" name="displayName" placeholder="My name" required)
+    .form-group
+      label(for="email") Email
+      input.form-control(type="email" id="email" name="email" placeholder="my@mail.com" required)
+    .form-group
+      label(for="password") Password
+      input.form-control(type="password" id="password" name="password" required)
+
+    button.btn.btn-lg.btn-primary.btn-block(type="submit") Sign Up
+
+    script
+      include login.js

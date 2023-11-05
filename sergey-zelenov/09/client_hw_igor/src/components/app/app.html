@@ -1,0 +1,22 @@
+<v-app light>
+  <v-toolbar dark color="primary" flat>
+    <v-toolbar-title>Chat with Vue.js and Node.js</v-toolbar-title>
+    <v-spacer></v-spacer>
+    <v-toolbar-items v-if="!user.token">
+      <v-btn @click.stop="openAuth" flat>Sign In | Sign Up</v-btn>
+    </v-toolbar-items>
+    <div class="header__user-info" v-else>
+      <span class="subheading">{{ user.displayName }}</span>
+      <v-btn @click="signOut" flat>Sign Out</v-btn>
+    </div>
+  </v-toolbar>
+  <v-content>
+    <chat v-if="user.token"></chat>
+    <div v-else class="content__no-user-text subheading">Please Sign In to enter the Chat App!</div>
+    <auth :dialog="dialog" @toggleAuth="toggleAuth"></auth>
+  </v-content>
+  <v-footer color="grey darken-3" :fixed="fixed" app>
+    <v-spacer></v-spacer>
+    <span class="footer__text">&copy; Made by Igor Yaitsky, 2017</span>
+  </v-footer>
+</v-app>

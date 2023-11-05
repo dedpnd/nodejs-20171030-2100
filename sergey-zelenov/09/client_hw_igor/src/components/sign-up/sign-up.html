@@ -1,0 +1,59 @@
+<v-card v-if="!sended">
+  <v-form v-model="valid" ref="signUpForm" lazy-validation>
+    <v-card-title>
+      <span class="title">Sign Up</span>
+    </v-card-title>
+    <v-card-text>
+      <v-text-field
+        v-model="newDisplayName"
+        name="displayName"
+        label="Username"
+        :rules="nameRules"
+        prepend-icon="person"
+        required
+      ></v-text-field>
+      <v-text-field
+        v-model="newEmail"
+        name="email"
+        label="E-mail"
+        :rules="emailRules"
+        prepend-icon="email"
+        required
+      ></v-text-field>
+      <v-text-field
+        v-model="newPassword"
+        name="password"
+        label="Password"
+        :rules="passRules"
+        prepend-icon="lock"
+        required
+        type="password"
+      ></v-text-field>
+    </v-card-text>
+    <v-card-actions>
+      <v-container>
+        <v-btn
+          block
+          @click="signUp"
+          color="success"
+          :disabled="!valid"
+        > Sign Up </v-btn>
+      </v-container>
+    </v-card-actions>
+  </v-form>
+</v-card>
+<v-card v-else>
+  <v-card-title>
+    <span class="title">Sign Up</span>
+  </v-card-title>
+  <v-card-text>
+      <div class="block subheading">Thank you for registration! </div>
+      <div class="body-1">You need to verify your email address. Verify link was sent to your email. Check it!</div>
+      <v-btn
+        block
+        @click="closeAuth"
+        class="sign-up__close-btn"
+        color="primary"
+      > Close </v-btn>
+  </v-card-text>
+</v-card>

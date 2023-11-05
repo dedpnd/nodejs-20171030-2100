@@ -1,0 +1,10 @@
+подключите oAuth 2.0 стратегию паспорта (github, yandex, vkontakte, twitter, ...)
+регистрация с подтверждением email (gmail, yandex, ...)
+
+  генерируется случайный токен, записывается в модель пользователя
+  http://localhost:3000/verify/:token
+
+  -> User.findOne({token})
+      user.verified = true;
+      user.save();
+      ctx.login();

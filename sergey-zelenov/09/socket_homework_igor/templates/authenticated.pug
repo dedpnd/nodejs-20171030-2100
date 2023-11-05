@@ -1,0 +1,13 @@
+block head
+  title Authenticated
+
+block content
+  h2 Authenticated successfully!
+
+script(type="text/javascript").
+  window.opener.authenticateCallback({
+    token: `#{token}`,
+    displayName: `#{displayName}`,
+    email: `#{email}`
+  });
+  window.close();

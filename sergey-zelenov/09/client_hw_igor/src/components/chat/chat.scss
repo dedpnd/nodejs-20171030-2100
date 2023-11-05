@@ -1,0 +1,22 @@
+.chat {
+
+  &__status {
+    margin: 10px;
+  }
+
+  &__list {
+    height: calc(100vh - 310px) !important;
+    overflow-y: auto;
+  }
+
+  &__avatar {
+    display: flex;
+  }
+
+  &__system-message .list__tile {
+    height: 36px !important;
+  }
+  .list.list--two-line .list__tile__avatar {
+    align-items: center;
+  }
+}

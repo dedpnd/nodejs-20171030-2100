@@ -1,0 +1,16 @@
+.header {
+  &__user-info {
+    display: flex;
+    align-items: center;
+  }
+}
+.content {
+  &__no-user-text {
+    text-align: center;
+  }
+}
+.footer {
+  &__text {
+    color: #fff;
+  }
+}

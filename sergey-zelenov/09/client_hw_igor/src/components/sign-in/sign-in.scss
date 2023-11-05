@@ -1,0 +1,17 @@
+.sign-in {
+  &__facebook {
+    background-color: #3b5998 !important;
+    margin-top: 5px !important;
+  }
+  &__github {
+    background-color: #333 !important;
+    margin-top: 5px !important;
+  }
+
+  .card__actions {
+    padding-top: 0;
+    .btn {
+      margin: 0;
+    }
+  }
+}

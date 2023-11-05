@@ -1,0 +1,5 @@
+github - master
+
+jenkins - test, "git push production"
+
+ssh production, git pull production

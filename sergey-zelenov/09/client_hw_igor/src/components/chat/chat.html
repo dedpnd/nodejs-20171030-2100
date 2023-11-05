@@ -1,0 +1,33 @@
+<v-layout row fill-height class="chat">
+  <v-flex d-flex md6 offset-md3>
+    <v-card>
+      <div class="chat__status subheading">Status: {{ status ? status : 'Not connected' }}</div>
+      <v-divider></v-divider>
+      <v-list ref="messages" two-line class="chat__list">
+        <v-list-tile 
+          :avatar="message.type === 'message'" 
+          v-for="message in messages" 
+          :class="{ 'chat__system-message': message.type === 'system' }"
+          v-bind:key="message.message">
+            <v-list-tile-avatar v-if="message.type === 'message'" class="chat__avatar">
+              <v-icon class="grey lighten-1 white--text">person</v-icon>
+            </v-list-tile-avatar>
+            <v-list-tile-content>
+              <v-list-tile-title v-if="message.type === 'message'">{{ message.user }}</v-list-tile-title>
+              <v-list-tile-sub-title>{{ message.message }}</v-list-tile-sub-title>
+            </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+      <v-divider></v-divider>
+      <v-text-field
+        name="newMessage"
+        label="Write a message..."
+        v-model="newMessage"
+        single-line
+        full-width
+        hide-details
+        @keyup.enter.native="sendMessage"
+      ></v-text-field>
+    </v-card>
+  </v-flex>
+</v-layout>

@@ -1,0 +1,19 @@
+<v-dialog v-model="opened" max-width="360px" @keydown.esc="opened = false">
+  <v-card>
+    <v-tabs grow centered v-model="active">
+      <v-tabs-bar dark class="indigo">
+        <v-tabs-item href="#sign-in" ripple>Sign In</v-tabs-item>
+        <v-tabs-item href="#sign-up" ripple>Sign Up</v-tabs-item>
+        <v-tabs-slider color="indigo lighten-4"></v-tabs-slider>
+      </v-tabs-bar>
+      <v-tabs-items>
+        <v-tabs-content id="sign-in" class="sign-in">
+          <sign-in @closeAuth="closeAuth"></sign-in>
+        </v-tabs-content>
+        <v-tabs-content id="sign-up" class="sign-up">
+          <sign-up @closeAuth="closeAuth"></sign-up>
+        </v-tabs-content>
+      </v-tabs-items>
+    </v-tabs>
+  </v-card>
+</v-dialog>
